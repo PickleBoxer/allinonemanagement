@@ -1,0 +1,283 @@
+/**
+* 2007-2023 PrestaShop
+*
+* NOTICE OF LICENSE
+*
+* This source file is subject to the Academic Free License (AFL 3.0)
+* that is bundled with this package in the file LICENSE.txt.
+* It is also available through the world-wide-web at this URL:
+* http://opensource.org/licenses/afl-3.0.php
+* If you did not receive a copy of the license and are unable to
+* obtain it through the world-wide-web, please send an email
+* to license@prestashop.com so we can send you a copy immediately.
+*
+* DISCLAIMER
+*
+* Do not edit or add to this file if you wish to upgrade PrestaShop to newer
+* versions in the future. If you wish to customize PrestaShop for your
+* needs please refer to http://www.prestashop.com for more information.
+*
+*  @author    PrestaShop SA <contact@prestashop.com>
+*  @copyright 2007-2023 PrestaShop SA
+*  @license   http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+*  International Registered Trademark & Property of PrestaShop SA
+*
+* Don't forget to prefix your containers with your own identifier
+* to avoid any conflicts with others containers.
+*/
+:root {
+  --spacer-1: 0.25rem;
+  --spacer-2: 0.5rem;
+  --spacer-3: 0.75rem;
+  --spacer-4: 1rem;
+  --spacer-5: 1.5rem;
+  --spacer-6: 2rem;
+  --spacer-7: 3rem;
+  --spacer-8: 4rem;
+  --border-radius-1: 0.25rem;
+  --border-radius-2: 0.875rem;
+  --border-radius-3: 10rem;
+  --box-shadow-1: 0.25rem 0.25rem 0rem var(--primary);
+  --box-shadow-2: 0.5rem 0.5rem 0rem var(--primary);
+  --z-index-base: 0;
+  --z-index-overlay: 1;
+  --z-index-above-overlay: 2;
+  --z-index-header: 3;
+  --z-index-menubar: 10;
+  --z-index-modal: 20;
+  --z-index-tooltip: 30;
+  --success: #23a094;
+  --danger: #e2442f;
+  --warning: #ffc900;
+  --info: #90a8ed;
+  --pink: #ff90e8;
+  --purple: #90a8ed;
+  --green: #23a094;
+  --orange: #e2442f;
+  --red: #98282a;
+  --yellow-dark: #ffc900;
+  --yellow: #f1f333;
+  --black: #000000;
+  --gray-500: #78716c;
+  --gray-400: #a8a29e;
+  --gray-300: #d6d3d1;
+  --gray-200: #e7e5e4;
+  --gray-100: #f4f4f0;
+  --gray-050: #fbfbf9;
+  --white: #ffffff;
+  --primary: #000000;
+  --contrast-primary: #ffffff;
+  --accent: #ff90e8;
+  --contrast-accent: #000000;
+  --background: #ffffff;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 1024px;
+  --font-family: Mabry Pro, sans-serif;
+  --border: solid 0.0625rem currentColor;
+  --border-width: 0.0625rem;
+  --outline: 0.125rem solid #ff90e8;
+  --big-icon-size: 1.5em;
+  --grid-wrap-breakpoint: 31.25rem;
+  --active-bg: #ffffff;
+  --main-stack-width: 28rem;
+  --dynamic-grid: min(100%, calc((31.25rem - 100%) * 1000));
+  --disabled-opacity: 0.3;
+  --form-element-height: 3.125rem;
+  --faded-text-color: rgba(0, 0, 0, 0.8);
+}
+
+#loader-container:not(.visible) {
+  display: none;
+}
+
+#loader-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.75);
+  z-index: 10;
+}
+
+#loader-container .loader {
+  display: block;
+  width: 80px;
+  height: 80px;
+  background-image: url(../img/loader.svg);
+  background-size: cover;
+}
+
+.grid {
+  --min-grid-absolute-size: 16rem;
+  --max-grid-relative-size: 33%;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(
+      max(
+        min(var(--min-grid-absolute-size), 100%),
+        var(--max-grid-relative-size) - 1rem
+      ),
+      1fr
+    )
+  );
+  grid-gap: 1rem;
+  gap: 1rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.panel.panel-navbar {
+  display: flex;
+}
+
+#content.bootstrap .panel {
+  background-color: #fff;
+  background-color: var(--background);
+  color: #000;
+  color: var(--primary);
+  --active-bg: #f4f4f0;
+  border: solid 0.0625rem currentColor;
+  border-radius: 0.25rem;
+}
+
+article.panel-card {
+  position: relative;
+  transition: all 0.14s ease-out;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background-color: #fff;
+  background-color: var(--background);
+  color: #000;
+  color: var(--primary);
+  --active-bg: #f4f4f0;
+  border: solid 0.0625rem currentColor;
+  border-radius: 0.25rem;
+}
+
+article.panel-card:hover {
+  box-shadow: 0.25rem 0.25rem #000;
+  box-shadow: 0.25rem 0.25rem 0 var(--primary);
+}
+
+article.panel-card img {
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+article.panel-card header {
+  padding: 1rem;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-gap: 0.5rem;
+  gap: 0.5rem;
+  -border-bottom: solid 0.0625rem currentColor;
+}
+
+article.panel-card footer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+article.panel-card footer button{
+  -border-radius: 0;
+}
+
+.bootstrap .list-group-item {
+  background-color: #fff;
+  background-color: var(--background);
+  color: #000;
+  color: var(--primary);
+  --active-bg: #f4f4f0;
+  padding: 1.5rem;
+  display: grid;
+  grid-gap: 1.5rem;
+  gap: 1.5rem;
+  height: 100%;
+  line-height: 1.5;
+  --line-height: 1.5rem;
+  transition: all 0.14s ease-out;
+  cursor: pointer;
+  justify-content: center;
+  border-radius: 0.25rem;
+  border: solid 0.0625rem currentColor !important;
+  margin-bottom: 0.25rem;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+}
+
+.bootstrap .list-group-item.active:not(:active),
+.bootstrap .list-group-item:hover:not(:active) {
+  transform: translate(-0.25rem, -0.25rem);
+  box-shadow: 0.25rem 0.25rem 0 var(--primary);
+  background-color: var(--background) !important;
+  color: var(--primary) !important;
+  --active-bg: #f4f4f0;
+  display: grid;
+  height: 100%;
+  line-height: 1.5;
+  --line-height: 1.5rem;
+}
+
+.bootstrap .list-group-item > :first-child {
+  grid-column: 1;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+}
+
+button,
+.button {
+  background: transparent;
+  background: var(--active-bg);
+  font-size: 1rem;
+  line-height: 1.5;
+  --line-height: 1.5rem;
+  padding: 0.75rem 1rem;
+  border: solid 0.0625rem currentColor;
+  color: currentColor;
+  border-radius: 0.25rem;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  transition: 0.14s ease-out;
+  transition-property: all;
+}
+
+button.filled,
+.filled.button {
+  background-color: #fff;
+  background-color: var(--background);
+  color: #000;
+  color: var(--primary);
+  --active-bg: #f4f4f0;
+  border-color: #000;
+  border-color: var(--primary);
+}
+
+button:hover:not(:active):not([disabled]):not(
+    [aria-disabled="true"].category-card
+  ):not(button[aria-disabled="true"]):not([aria-disabled="true"].button),
+.button:hover:not(:active):not([disabled]):not(
+    [aria-disabled="true"].category-card
+  ):not(button[aria-disabled="true"]):not([aria-disabled="true"].button) {
+  transform: translate(-0.25rem, -0.25rem);
+  box-shadow: 0.25rem 0.25rem #000;
+  box-shadow: 0.25rem 0.25rem 0 var(--primary);
+}
+
+[aria-selected=true] {
+  background-color: #fff;
+  background-color: var(--active-bg);
+  transform: translate(-0.25rem,-0.25rem);
+  box-shadow: 0.25rem 0.25rem #000;
+  box-shadow: 0.25rem 0.25rem 0 var(--primary);
+}

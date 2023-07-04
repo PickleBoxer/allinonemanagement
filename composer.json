@@ -1,0 +1,27 @@
+{
+    "name": "kdobivedel/allinonemanagement",
+    "description": "All-in-one Management Module for Prestashop",
+    "authors": [
+        {
+            "name": "Matic Vertacnik",
+            "email": "matic.vertacnik@icloud.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0",
+        "jandc/css-from-html-extractor": "^1.2",
+        "masterminds/html5": "^2.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "AllInOneManagement\\": "src/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "prepend-autoloader": false
+    },
+    "type": "prestashop-module",
+    "author": "kdobivedel",
+    "license": "MIT"
+}

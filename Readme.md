@@ -1,0 +1,1 @@
+# All-in-one Management Module for Prestashop
